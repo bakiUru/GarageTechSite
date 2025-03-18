@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios Eléctricos Profesionales</title>
+    <style>
+        :root {
+            --primary-color: #ffb100;
+            --secondary-color: #333333;
+            --light-bg: #f6f6f6;
+            --white: #ffffff;
+            --text-dark: #333333;
+            --text-light: #777777;
+            --shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://via.placeholder.com/1600x900');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn:hover {
+            background-color: #e69c00;
+            transform: translateY(-3px);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background-color: var(--light-bg);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
+        }
+
+        .service-content {
+            padding: 25px;
+        }
+
+        .service-content h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+
+        .service-content p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .service-content .btn {
+            padding: 10px 20px;
+            font-size: 14px;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 30px;
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .feature-icon i {
+            font-size: 30px;
+            color: var(--white);
+        }
+
+        .feature-item h3 {
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .feature-item p {
+            color: var(--text-light);
+        }
+
+        /* CTA Section */
+        .cta {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta .btn {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: #aaa;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        .footer-column p, .footer-column a {
+            color: #aaa;
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-column a:hover {
+            color: var(--primary-color);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #333;
+            border-radius: 50%;
+            color: var(--white);
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+            }
+
+            nav ul {
+                margin-top: 20px;
+            }
+
+            nav ul li {
+                margin: 0 10px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo">AM<span>Electrotecnia</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="#">Sobre nosotros</a></li>
+                    <li><a href="#">Proyectos</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Servicios Eléctricos Profesionales</h1>
+            <p>Ofrecemos soluciones eléctricas confiables y seguras para tu hogar y negocio. Nuestro equipo de electricistas certificados está disponible las 24 horas, los 7 días de la semana.</p>
+            <a href="#" class="btn">Solicitar presupuesto</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestros Servicios</h2>
+                <p>Ofrecemos una amplia gama de servicios eléctricos para satisfacer todas tus necesidades. Desde reparaciones menores hasta instalaciones completas, tenemos la experiencia para hacer el trabajo correctamente.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://via.placeholder.com/600x400" alt="Instalaciones eléctricas">
+                    </div>
+                    <div class="service-content">
+                        <h3>Instalaciones Eléctricas</h3>
+                        <p>Instalación completa de sistemas eléctricos para nuevas construcciones y renovaciones, cumpliendo con todos los estándares de seguridad.</p>
+                        <a href="#" class="btn">Más información</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://via.placeholder.com/600x400" alt="Reparaciones eléctricas">
+                    </div>
+                    <div class="service-content">
+                        <h3>Reparaciones Eléctricas</h3>
+                        <p>Servicio rápido y eficiente para resolver problemas eléctricos, cortocircuitos, conexiones defectuosas y más.</p>
+                        <a href="#" class="btn">Más información</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://via.placeholder.com/600x400" alt="Iluminación">
+                    </div>
+                    <div class="service-content">
+                        <h3>Iluminación</h3>
+                        <p>Diseño e instalación de sistemas de iluminación para crear ambientes funcionales y estéticos en interiores y exteriores.</p>
+                        <a href="#" class="btn">Más información</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://via.placeholder.com/600x400" alt="Paneles solares">
+                    </div>
+                    <div class="service-content">
+                        <h3>Paneles Solares</h3>
+                        <p>Instalación de sistemas de energía solar para reducir costos de electricidad y contribuir al cuidado del medio ambiente.</p>
+                        <a href="#" class="btn">Más información</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://via.placeholder.com/600x400" alt="Redes y cableado">
+                    </div>
+                    <div class="service-content">
+                        <h3>Redes y Cableado</h3>
+                        <p>Servicios profesionales de cableado estructurado para redes de datos, voz y sistemas de seguridad.</p>
+                        <a href="#" class="btn">Más información</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://via.placeholder.com/600x400" alt="Mantenimiento eléctrico">
+                    </div>
+                    <div class="service-content">
+                        <h3>Mantenimiento Eléctrico</h3>
+                        <p>Servicios preventivos para garantizar el funcionamiento óptimo de tus sistemas eléctricos y prevenir fallos.</p>
+                        <a href="#" class="btn">Más información</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>¿Por qué elegirnos?</h2>
+                <p>Somos especialistas en servicios eléctricos con más de 15 años de experiencia en el sector. Nos caracterizamos por ofrecer un servicio rápido, eficiente y de calidad.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i>⚡</i>
+                    </div>
+                    <h3>Servicio 24/7</h3>
+                    <p>Disponibles las 24 horas del día, los 7 días de la semana para atender emergencias eléctricas.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i>🔧</i>
+                    </div>
+                    <h3>Profesionales certificados</h3>
+                    <p>Nuestro equipo de electricistas cuenta con certificaciones y amplia experiencia en el sector.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i>💰</i>
+                    </div>
+                    <h3>Precios competitivos</h3>
+                    <p>Ofrecemos tarifas justas y transparentes sin comprometer la calidad del servicio.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i>🛡️</i>
+                    </div>
+                    <h3>Garantía en trabajos</h3>
+                    <p>Todos nuestros servicios están respaldados por una garantía de satisfacción del cliente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+        <div class="container">
+            <h2>¿Necesitas un electricista profesional?</h2>
+            <p>Contáctanos hoy mismo para obtener un presupuesto gratuito. Estamos listos para ayudarte con cualquier proyecto o emergencia eléctrica.</p>
+            <a href="#" class="btn">Contactar ahora</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>ElectriPro</h3>
+                    <p>Ofrecemos servicios eléctricos profesionales para hogares y negocios con la máxima calidad y seguridad.</p>
+                    <div class="social-links">
+                        <a href="#"><i>f</i></a>
+                        <a href="#"><i>t</i></a>
+                        <a href="#"><i>in</i></a>
+                        <a href="#"><i>ig</i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Servicios</h3>
+                    <a href="#">Instalaciones Eléctricas</a>
+                    <a href="#">Reparaciones</a>
+                    <a href="#">Iluminación</a>
+                    <a href="#">Paneles Solares</a>
+                    <a href="#">Redes y Cableado</a>
+                    <a href="#">Mantenimiento</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Enlaces rápidos</h3>
+                    <a href="#">Inicio</a>
+                    <a href="#">Servicios</a>
+                    <a href="#">Sobre nosotros</a>
+                    <a href="#">Proyectos</a>
+                    <a href="#">Testimonios</a>
+                    <a href="#">Contacto</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Contacto</h3>
+                    <p>Calle Principal #123, Ciudad</p>
+                    <p>info@electripro.com</p>
+                    <p>+34 123 456 789</p>
+                    <p>Lunes a Viernes: 8:00 - 18:00</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 ElectriPro. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

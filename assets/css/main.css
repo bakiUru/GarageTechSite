@@ -9,6 +9,7 @@
         :root {
             --primary-color: #0066cc;
             --primary-dark: #0055aa;
+            --profile-color: #fcc11e12;
             --text-color: #333;
             --text-light: #555;
             --bg-color: #fff;
@@ -17,9 +18,24 @@
             --container-width: 1200px;
             --heading-font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             --body-font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --transition-time: 0.5s;
         }
-        
+        /*Dark MODE*/
+        body.dark {
+            --primary-color: #fdc21c;
+            --primary-dark: #fcbf1e;
+            --text-color: #fff;
+            --text-light: #ccc;
+            --bg-color: #333;
+            --bg-alt: #444;
+            --border-color: #555;
+            --profile-color: #aeadaa25;
+        }
         body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            transition: background-color var(--transition-time),
+                        color var(--transition-time);
             font-family: var(--body-font);
             line-height: 1.6;
             color: var(--text-color);
@@ -77,7 +93,41 @@
         nav ul li {
             margin-left: 30px;
         }
-        
+        .switchMode{
+            background-color: #09103b;
+            border-radius: 100px;
+            border: #000000 2px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            cursor: pointer;
+            font-size: 1.1rem;
+            color: #fdc21c;
+            user-select: none;
+        }
+
+        #nav-menu li:last-child::before{
+            content: "";
+            position: absolute;
+            height: 25px;
+            width: 25px;
+            border-radius: 50% ;
+            background-color: #fff;
+            border: solid 20px thin #000000;
+            left: 0;
+            right: unset;
+        }
+        #nav-menu li:last-child.active::before{
+            right: 0;
+            left: unset;
+            border: solid thin #fff;
+        }
+
+        #nav-menu li:last-child.active{
+            background-color: rgb(235, 140, 72);
+            border: solid 2px #fff;
+        }
         /* Mobile navigation */
         .menu-toggle {
             display: none;
@@ -86,6 +136,19 @@
         }
         
         /* Profile Section */
+        .frame-profile{
+
+            display: flex;
+                flex-wrap: wrap;
+                padding: inherit;
+                align-items: center;
+                height: 65vh;
+                width: 40vmax;
+                background-color: var(--profile-color);
+                border-radius: 10%;
+                justify-content: space-evenly;
+                flex-direction: column;
+        }
         .profile {
             display: flex;
             flex-direction: column;
@@ -222,6 +285,11 @@
         
         /* Responsive Design - Tablet */
         @media screen and (max-width: 1024px) {
+            .frame-profile{
+                width: auto;
+                height: auto;
+                padding: 10%;
+            }
             .profile h1 {
                 font-size: 2.5rem;
             }
@@ -233,6 +301,11 @@
         
         /* Responsive Design - Mobile */
         @media screen and (max-width: 768px) {
+            .frame-profile{
+                width: auto;
+                height: auto;
+                padding: 10%;
+            }
             .menu-toggle {
                 display: block;
             }
@@ -297,6 +370,11 @@
         
         /* Responsive Design - Small Mobile */
         @media screen and (max-width: 480px) {
+            .frame-profile{
+                width: auto;
+                height: auto;
+                padding: 10%;
+            }
             .profile h1 {
                 font-size: 1.75rem;
             }
