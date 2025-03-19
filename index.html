@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Garage Tech</title>
     <link rel="stylesheet" href="../assets/css/main.css">
+    <!-- Email Library SMTP JS -->
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
 </head>
 <body>
     <!-- Header/Navigation -->
@@ -120,7 +122,7 @@
             
             <div class="contact-form">
                 <h3>Send a Message</h3>
-                <form>
+                <form id="form-contact">
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" required>
@@ -136,7 +138,7 @@
                         <textarea id="message" name="message" required></textarea>
                     </div>
                     
-                    <button type="submit">Send Message</button>
+                    <button id="sendEmail" type="submit">Send Message</button>
                 </form>
             </div>
         </div>
@@ -145,5 +147,6 @@
     <!-- JavaScript for mobile menu toggle -->
     <script src="../assets/js/responsive.js"></script>
     <script src="../assets/js/switchMode.js"></script>
+    <script src="../assets/js/contactEmail.js"></script>
 </body>
 </html>

@@ -300,6 +300,14 @@
         }
         
         /* Responsive Design - Mobile */
+        @media screen and (max-width: 1366px) {
+            .frame-profile{
+                width: auto;
+                height: auto;
+                padding: 10%;
+            }
+
+        }
         @media screen and (max-width: 768px) {
             .frame-profile{
                 width: auto;
