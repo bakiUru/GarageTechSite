@@ -185,7 +185,13 @@
             background-color: var(--primary-dark);
             color: white;
         }
-        
+        /* Letters show behavior */
+        .typing-letters b i{
+            opacity: 0;
+        }
+        .in{
+            opacity: 1;
+        }
         /* About Section */
         .about-content {
             display: grid;
